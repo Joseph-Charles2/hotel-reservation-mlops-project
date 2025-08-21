@@ -1,5 +1,4 @@
-pipeline
-    {
+pipeline{
         agent any
 
         stages{
@@ -9,6 +8,6 @@ pipeline
                         echo 'cloning Github repo to Jenkins ............'
                         checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Joseph-Charles2/hotel-reservation-mlops-project.git']])
                     }
-                }
+              }  }
         }
     }
