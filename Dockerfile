@@ -6,6 +6,9 @@ ENV PYTHONDONTWRITEBYTECODE =1 \
 
 WORKDIR /app
 
+#Add this line to install Git
+RUN apt-get update && apt-get install -y --no-install-recommends git
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgomp1 \
     && apt-get clean \
