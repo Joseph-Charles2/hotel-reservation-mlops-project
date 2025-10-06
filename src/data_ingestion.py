@@ -10,6 +10,7 @@ from config.paths_config import *
 from utils.common_functions import read_yaml
 
 
+
 logger = get_logger(__name__)
 
 class DataIngestion:
@@ -22,10 +23,13 @@ class DataIngestion:
 
         os.makedirs(RAW_DIR,exist_ok=True)
         logger.info(f"Data Ingestion Started with {self.bucket_name} and file is {self.file_name}.")
+        print(f"DEBUG: Initialized DataIngestion for bucket '{self.bucket_name}' and file '{self.file_name}'")
+
 
 
     def download_csv_from_gcp(self):
         try:
+            print(storage.Client())
             client = storage.Client()
             bucket = client.bucket(self.bucket_name)
             blob = bucket.blob(self.file_name)

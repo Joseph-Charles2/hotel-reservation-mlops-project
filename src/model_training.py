@@ -32,9 +32,9 @@ class ModelTraining:
 
         try:
             logger.info(f"Loading data from {self.train_path}")
-            train_df = pd.read_csv(self.train_path)
+            train_df = load_data(self.train_path)
             logger.info(f"Loading data from {self.test_path}")
-            test_df = pd.read_csv(self.test_path)
+            test_df = load_data(self.test_path)
 
             X_train = train_df.drop(columns=["booking_status"])
             Y_train = train_df['booking_status']
