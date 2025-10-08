@@ -9,6 +9,8 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgomp1 \
     build-essential \
+    cmake \
+    libssl-dev \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY . .
