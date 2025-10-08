@@ -1,5 +1,5 @@
 # Create a python image
-FROM python:slim
+FROM python:3.11
 
 ENV PYTHONDONTWRITEBYTECODE =1 \
     PYTHONUNBUFFERED =1
